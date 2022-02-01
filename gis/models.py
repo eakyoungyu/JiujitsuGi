@@ -8,3 +8,6 @@ class Gi(core_model.TimeStampedModel):
 
     name = models.CharField(max_length=150)
     brand = models.ForeignKey("brands.Brand", on_delete=models.CASCADE)
+    link = models.URLField()
+    price = models.IntegerField()
+    photo = models.ImageField()
