@@ -1,6 +1,4 @@
 from django.contrib import admin
-
-y
 from . import models
 
 
