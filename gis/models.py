@@ -10,4 +10,7 @@ class Gi(core_model.TimeStampedModel):
     brand = models.ForeignKey("brands.Brand", on_delete=models.CASCADE)
     link = models.URLField()
     price = models.IntegerField()
-    photo = models.ImageField()
+    photo = models.ImageField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.name} from {self.brand}"
