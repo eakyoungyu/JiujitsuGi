@@ -1,6 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import ListView
+from . import models
 
 
-def all_brands(request):
-    return HttpResponse(content="<h1>HOME</h1>")
+class HomeView(ListView):
+
+    """HomeView Definition"""
+
+    model = models.Brand
+    context_object_name = "brands"
