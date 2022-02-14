@@ -4,9 +4,10 @@
 {{brand.name}}
 
 <ul>
-    {{brand.gis}}
     {% for gi in brand.gis.all %}
-    <li>{{gi.name}}</li>
+    <li>
+        <a href="{% url 'gis:detail' gi.pk %}">{{gi.name}}</a>
+    </li>
     {% endfor %}
 </ul>
 {% endblock content %}

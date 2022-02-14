@@ -22,6 +22,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("core.urls", namespace="core")),
     path("brand/", include("brands.urls", namespace="brands")),
+    path("gi/", include("gis.urls", namespace="gis")),
 ]
 
 if settings.DEBUG:
