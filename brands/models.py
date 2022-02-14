@@ -8,7 +8,6 @@ class Brand(core_models.TimeStampedModel):
     """Brand Model Definition"""
 
     name = models.CharField(max_length=100)
-    gis = models.ManyToManyField("gis.Gi", related_name="brands", blank=True)
     link = models.URLField()
 
     def __str__(self):

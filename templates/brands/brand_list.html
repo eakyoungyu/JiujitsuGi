@@ -4,7 +4,9 @@
 <h2>Brands</h2>
 <ul>
     {% for brand in brands %}
-    <li>{{ brand.name }}</li>
+    <li>
+        <a href="{% url 'brands:detail' brand.pk %}">{{ brand.name }}</a>
+    </li>
     {% endfor %}
 </ul>
 {% endblock %}

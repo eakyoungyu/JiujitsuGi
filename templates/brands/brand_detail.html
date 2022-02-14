@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{brand.name}}
+
+<ul>
+    {{brand.gis}}
+    {% for gi in brand.gis.all %}
+    <li>{{gi.name}}</li>
+    {% endfor %}
+</ul>
+{% endblock content %}
