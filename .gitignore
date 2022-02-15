@@ -133,3 +133,6 @@ dmypy.json
 
 # Django
 uploads/
+
+# Node
+node_modules/
