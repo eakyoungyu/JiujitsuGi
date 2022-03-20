@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav_link{
+    @apply  ml-8 border-b-2 border-white hover:border-gray-600 h-full flex items-center;
+    a { //nav_link a
+        @apply py-10 px-5;
+    }
+}
