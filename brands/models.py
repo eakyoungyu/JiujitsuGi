@@ -24,3 +24,9 @@ class Brand(core_models.TimeStampedModel):
 
     def __str__(self):
         return self.name
+
+    def first_photo(self):
+        (photo,) = self.photos.all()[:1]
+        print(photo.file.url)
+        print(self.link)
+        return photo.file.url

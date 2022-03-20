@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{{brand.name}}
+{% include 'mixins/brand_card.html' with brand=brand %}
 
 <ul>
     {% for gi in brand.gis.all %}
