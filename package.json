@@ -11,13 +11,20 @@
   },
   "homepage": "https://github.com/eakyoungyu/JiujitsuGi#readme",
   "devDependencies": {
+    "@types/react-helmet": "^6.1.5",
     "autoprefixer": "^10.4.2",
     "gulp": "^4.0.2",
     "gulp-csso": "^4.0.1",
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
+    "i": "^0.3.7",
     "node-sass": "^7.0.1",
+    "npm": "^8.6.0",
     "sass": "^1.49.7",
     "tailwindcss": "^3.0.22"
+  },
+  "dependencies": {
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^5.3.0"
   }
 }
