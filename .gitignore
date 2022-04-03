@@ -136,3 +136,6 @@ uploads/
 
 # Node
 node_modules/
+
+# Custom
+brands/management/commands/my_db/
