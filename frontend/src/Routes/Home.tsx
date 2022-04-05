@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import BrandGrid from "../Components/BrandGrid";
 
 const Background = styled.div`
   background-color: ${(props) => props.theme.backgroundColor.grey};
@@ -6,9 +7,15 @@ const Background = styled.div`
   margin-top: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  /* justify-content: center; */
 `;
 function Home() {
-  return <Background>Home</Background>;
+  return (
+    <Background>
+      Gi Brands
+      <BrandGrid />
+    </Background>
+  );
 }
 export default Home;

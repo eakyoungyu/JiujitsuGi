@@ -24,6 +24,7 @@
     "tailwindcss": "^3.0.22"
   },
   "dependencies": {
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "react-helmet": "^6.1.0",
     "react-router-dom": "^5.3.0"
   }
