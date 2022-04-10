@@ -8,6 +8,7 @@ django = "*"
 flake8 = "*"
 black = "*"
 pillow = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 

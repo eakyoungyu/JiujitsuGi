@@ -45,11 +45,15 @@ DJANGO_APPS = [
 PROJECT_APPS = [
     "brands.apps.BrandsConfig",
     "gis.apps.GisConfig",
+    "rest_framework",
+    "corsheaders",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
