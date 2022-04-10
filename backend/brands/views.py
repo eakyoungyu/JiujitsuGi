@@ -9,6 +9,7 @@ class HomeView(ListView):
 
     model = models.Brand
     context_object_name = "brands"
+    # template_name = "index.html"
 
 
 class BrandDetail(DetailView):
