@@ -132,10 +132,10 @@ dmypy.json
 .vscode/
 
 # Django
-uploads/
+backend/uploads/
 
 # Node
-node_modules/
+backend/node_modules/
 
 # Custom
-brands/management/commands/my_db/
+backend/brands/management/commands/my_db/
