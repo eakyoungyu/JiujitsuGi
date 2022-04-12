@@ -20,7 +20,6 @@ const InfoBox = styled.div`
 `;
 const InfoThumnail = styled.img`
   width: 40%;
-  /* height: 50%; */
   border-radius: 50%;
 `;
 const InfoTitle = styled.h1`
