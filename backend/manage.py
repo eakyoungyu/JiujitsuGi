@@ -2,11 +2,12 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from pathlib import Path
 
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -17,8 +18,8 @@ def main():
         ) from exc
     # execute_from_command_line(sys.argv)
     try:
-        if sys.argv[2] == 'react':
-            project_root = os.getcwd()
+        if sys.argv[2] == "react":
+            project_root = Path.cwd().parent
             os.chdir(os.path.join(project_root, "frontend"))
             os.system("npm run build")
             os.chdir(project_root)
@@ -29,5 +30,5 @@ def main():
         execute_from_command_line(sys.argv)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

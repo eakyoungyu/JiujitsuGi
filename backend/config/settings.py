@@ -15,6 +15,7 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+FRONTEND_DIR = os.path.join(Path(__file__).resolve().parent.parent.parent, "frontend")
 
 
 # Quick-start development settings - unsuitable for production
@@ -69,8 +70,8 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            os.path.join(BASE_DIR, "templates"),
-            # os.path.join(BASE_DIR, 'frontend', 'build'),
+            # os.path.join(BASE_DIR, "templates"),
+            os.path.join(FRONTEND_DIR, "build"),
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -137,8 +138,8 @@ STATIC_URL = "/static/"
 
 # directory to access with static url
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    # os.path.join(BASE_DIR, "frontend", "build", "static"),
+    # os.path.join(BASE_DIR, "static"),
+    os.path.join(FRONTEND_DIR, "build", "static"),
 ]
 
 # Default primary key field type
