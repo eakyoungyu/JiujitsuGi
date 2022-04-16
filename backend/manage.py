@@ -17,6 +17,7 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
     # execute_from_command_line(sys.argv)
+    backend_dir = Path.cwd()
     try:
         if sys.argv[2] == "react":
             project_root = Path.cwd().parent
@@ -28,6 +29,8 @@ def main():
         execute_from_command_line(sys.argv)
     else:
         execute_from_command_line(sys.argv)
+    finally:
+        os.chdir(backend_dir)
 
 
 if __name__ == "__main__":
