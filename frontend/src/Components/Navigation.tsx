@@ -33,7 +33,7 @@ function Nav() {
       <Item>
         <Link to={"/"}>
           {/* <FontAwesomeIcon icon={faApple} size="lg" /> */}
-          Main Icon
+          Gi Brands / 도복 브랜드
         </Link>
       </Item>
       <Item>
