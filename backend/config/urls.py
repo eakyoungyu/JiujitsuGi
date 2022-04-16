@@ -18,9 +18,10 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
-    path("admin/", admin.site.urls),
     path("", include("core.urls", namespace="core")),
+    path("admin/", admin.site.urls),
     path("brand/", include("brands.urls", namespace="brands")),
     path("gi/", include("gis.urls", namespace="gis")),
 ]
