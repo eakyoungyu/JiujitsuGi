@@ -53,7 +53,7 @@ const InfoThumnail = styled.img`
   }
 `;
 const InfoTitle = styled.h1`
-  font-weight: 600;
+  font-weight: 700;
   font-size: 22px;
   margin-bottom: 20px;
   @media only screen and (max-width: 873px) {

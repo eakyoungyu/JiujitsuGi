@@ -27,7 +27,7 @@ const Title = styled.h1`
   width: 30px;
   font-size: 16px;
   letter-spacing: 10px;
-  font-weight: 500;
+  font-weight: 700;
   color: #e7e7e7;
   @media only screen and (max-width: 873px) {
     font-size: 14px;
@@ -83,12 +83,12 @@ function Nav() {
         </Item>
         <Item>
           <Link to={"/nav1"}>
-            Nav1 {nav1Match?.isExact && <Circle layoutId="circle" />}
+            새도복 {nav1Match?.isExact && <Circle layoutId="circle" />}
           </Link>
         </Item>
         <Item>
           <Link to={"/nav2"}>
-            Nav2 {nav2Match?.isExact && <Circle layoutId="circle" />}
+            내정보 {nav2Match?.isExact && <Circle layoutId="circle" />}
           </Link>
         </Item>
       </NavBar>
