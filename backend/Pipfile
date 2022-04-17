@@ -10,8 +10,9 @@ black = "*"
 pillow = "*"
 django-cors-headers = "*"
 djangorestframework = "*"
+django-environ = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.9"
+python_version = "3.8"
