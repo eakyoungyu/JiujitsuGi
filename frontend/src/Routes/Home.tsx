@@ -18,7 +18,22 @@ const Loader = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const MsgBox = styled.div``;
+const MsgBox = styled.div`
+  margin: 20px;
+  margin-bottom: 0px;
+  font-size: 18px;
+  text-align: center;
+  span {
+    margin-right: 5px;
+    :nth-child(2) {
+      color: ${(props) => props.theme.grey.lighter};
+    }
+  }
+  @media only screen and (min-width: 1500px) {
+    margin: 50px 10px;
+    font-size: 28px;
+  }
+`;
 function Home() {
   const { data: brands, isLoading: brandsLoading } = useQuery<IBrands[]>(
     ["brands", "brandHome"],
@@ -27,7 +42,10 @@ function Home() {
   console.log(brands);
   return (
     <Background>
-      <MsgBox>당신에게 어울리는 도복을 골라보세요</MsgBox>
+      <MsgBox>
+        <span>Ddbokk 또복.</span>
+        <span>당신에게 어울리는 도복을 골라보세요</span>
+      </MsgBox>
       {brandsLoading ? (
         <Loader>Loading</Loader>
       ) : (

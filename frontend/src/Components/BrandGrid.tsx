@@ -11,13 +11,24 @@ const GirdWrapper = styled.div`
   grid-row-gap: 1em;
   grid-column-gap: 1em;
   justify-items: center;
+  @media only screen and (max-width: 873px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fill, auto-fill);
+    grid-row-gap: 1em;
+    grid-column-gap: 0.5em;
+    justify-items: center;
+  }
+  @media only screen and (max-width: 400px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fill, auto-fill);
+    grid-row-gap: 1em;
+    grid-column-gap: 0.5em;
+    justify-items: center;
+  }
 `;
-const Loader = styled.div`
-  height: 20vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+
 interface IBrandGrid {
   data: IBrands[] | undefined;
   isLoading: boolean;

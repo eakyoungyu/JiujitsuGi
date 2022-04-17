@@ -18,7 +18,7 @@ const NavBar = styled(motion.div)`
   z-index: 2;
   background-color: ${(props) => props.theme.navColor};
 `;
-const Title = styled.div`
+const Title = styled.h1`
   position: absolute;
   top: 15px;
   left: 10px;
@@ -29,7 +29,14 @@ const Title = styled.div`
   letter-spacing: 10px;
   font-weight: 500;
   color: #e7e7e7;
-  /* color: ${(props) => props.theme.white.lighter}; */
+  @media only screen and (max-width: 873px) {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  @media only screen and (max-width: 400px) {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
 `;
 const Item = styled.div`
   color: #e7e7e7;
@@ -42,6 +49,10 @@ const Item = styled.div`
   flex-direction: column;
   &:hover {
     color: white;
+  }
+  @media only screen and (max-width: 400px) {
+    margin-right: 10px;
+    font-size: 11px;
   }
 `;
 const Circle = styled(motion.span)`
@@ -61,8 +72,8 @@ function Nav() {
   const nav2Match = useRouteMatch("/nav2");
   return (
     <>
-      <Title>DDobok</Title>
       <NavBar>
+        <Title>DDobok</Title>
         <Item>
           <Link to={"/"}>
             {/* <FontAwesomeIcon icon={faApple} size="lg" /> */}

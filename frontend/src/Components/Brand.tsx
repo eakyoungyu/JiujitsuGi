@@ -7,39 +7,75 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 const Wrapper = styled.div`
   width: 22vw;
   height: 22vw;
-  background-color: ${(props) => props.theme.backgroundColor.white};
+  background-color: ${(props) => props.theme.white.lighter};
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media only screen and (max-width: 873px) {
+    width: 29vw;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media only screen and (max-width: 400px) {
+    width: 40vw;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 const InfoBox = styled.div`
   height: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
 `;
 
 const InfoThumnailBox = styled.div`
+  margin: 5px 0px;
   height: 50%;
   display: flex;
   justify-content: center;
+  @media only screen and (max-width: 873px) {
+    margin-top: 5px;
+  }
+  @media only screen and (min-width: 1500px) {
+    margin: 10px 0px;
+  }
 `;
 const InfoThumnail = styled.img`
   width: 40%;
   object-fit: contain;
+  @media only screen and (min-width: 1500px) {
+    width: 50%;
+  }
 `;
 const InfoTitle = styled.h1`
   font-weight: 600;
   font-size: 22px;
+  margin-bottom: 20px;
+  @media only screen and (max-width: 873px) {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  @media only screen and (min-width: 1500px) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
 `;
-const InfoDetail = styled.h2`
+const InfoDetail = styled.div`
   font-size: 12px;
+  width: 80%;
+  text-align: center;
+  @media only screen and (min-width: 1500px) {
+    font-size: 14px;
+  }
 `;
 const LinkBox = styled.div`
-  margin-top: 40px;
-  width: 40%;
-  height: 25px;
+  margin-top: 20px;
+  padding: 10px 15px;
   border-radius: 20px;
   background-color: ${(props) => props.theme.grey.darker};
   font-size: 12px;
@@ -47,6 +83,10 @@ const LinkBox = styled.div`
   justify-content: center;
   align-items: center;
   color: ${(props) => props.theme.white.lighter};
+  @media only screen and (max-width: 873px) {
+    padding: 8px 10px;
+    margin-top: 15px;
+  }
 `;
 interface IBrand {
   data: IBrands | undefined;
