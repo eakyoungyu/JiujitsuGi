@@ -17,6 +17,7 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
     # execute_from_command_line(sys.argv)
+    backend_dir = Path.cwd()
     try:
         if sys.argv[2] == "react":
             project_root = Path.cwd().parent
@@ -24,10 +25,14 @@ def main():
             os.system("npm run build")
             os.chdir(project_root)
             sys.argv.pop(2)
+            print("Y2K2 Frontend done")
     except IndexError:
         execute_from_command_line(sys.argv)
     else:
         execute_from_command_line(sys.argv)
+    finally:
+        print("Y2K2 change directory", backend_dir)
+        os.chdir(backend_dir)
 
 
 if __name__ == "__main__":
