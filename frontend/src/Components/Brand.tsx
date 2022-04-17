@@ -31,17 +31,22 @@ const InfoThumnail = styled.img`
 `;
 const InfoTitle = styled.h1`
   font-weight: 600;
-  font-size: 18px;
+  font-size: 22px;
 `;
 const InfoDetail = styled.h2`
-  font-size: 14px;
+  font-size: 12px;
 `;
 const LinkBox = styled.div`
-  margin-top: 50px;
-  width: 100%;
+  margin-top: 40px;
+  width: 40%;
+  height: 25px;
+  border-radius: 20px;
+  background-color: ${(props) => props.theme.grey.darker};
+  font-size: 12px;
   display: flex;
   justify-content: center;
-  color: ${(props) => props.theme.pointColor.red};
+  align-items: center;
+  color: ${(props) => props.theme.white.lighter};
 `;
 interface IBrand {
   data: IBrands | undefined;
@@ -61,7 +66,7 @@ function Brand({ data }: IBrand) {
       </InfoBox>
       <LinkBox>
         <a href={data?.link} target="_blank">
-          <span>Go to website</span>
+          <span>구매하러 가기</span>
         </a>
       </LinkBox>
     </Wrapper>

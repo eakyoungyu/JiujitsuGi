@@ -11,6 +11,8 @@ function App() {
       </Helmet>
       <Nav />
       <Switch>
+        <Route path={"/nav1"}></Route>
+        <Route path={"/nav2"}></Route>
         <Route path={"/"}>
           <Home />
         </Route>

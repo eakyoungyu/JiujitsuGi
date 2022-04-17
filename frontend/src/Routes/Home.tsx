@@ -18,6 +18,7 @@ const Loader = styled.div`
   justify-content: center;
   align-items: center;
 `;
+const MsgBox = styled.div``;
 function Home() {
   const { data: brands, isLoading: brandsLoading } = useQuery<IBrands[]>(
     ["brands", "brandHome"],
@@ -26,11 +27,7 @@ function Home() {
   console.log(brands);
   return (
     <Background>
-      {/* {brandsLoading ? (
-        <span>Loading</span>
-      ) : (
-        brands?.map((item) => <div>{item.name}</div>)
-      )} */}
+      <MsgBox>당신에게 어울리는 도복을 골라보세요</MsgBox>
       {brandsLoading ? (
         <Loader>Loading</Loader>
       ) : (
