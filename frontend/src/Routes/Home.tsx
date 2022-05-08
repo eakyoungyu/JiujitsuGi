@@ -43,7 +43,7 @@ function Home() {
   return (
     <Background>
       <MsgBox>
-        <span>Ddbokk 또복.</span>
+        <span>DDobok 또복.</span>
         <span>당신에게 어울리는 도복을 골라보세요</span>
       </MsgBox>
       {brandsLoading ? (
