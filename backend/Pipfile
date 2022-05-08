@@ -11,8 +11,9 @@ pillow = "*"
 django-cors-headers = "*"
 djangorestframework = "*"
 django-environ = "*"
-
-[dev-packages]
+django-storages = {extras = ["aws"], version = "*"}
+boto3 = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
