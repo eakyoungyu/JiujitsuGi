@@ -20,6 +20,7 @@ const Loader = styled.div`
 `;
 const MsgBox = styled.div`
   margin: 20px;
+
   margin-bottom: 0px;
   font-size: 18px;
   text-align: center;
