@@ -159,6 +159,7 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     # os.path.join(BASE_DIR, "static"),
     os.path.join(FRONTEND_DIR, "build", "static"),
+
 ]
 
 # Default primary key field type
@@ -167,6 +168,7 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
+
 MEDIA_URL = "/media/"
 
 CORS_ORIGIN_WHITELIST = ("http://localhost:3000",)

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IBrands } from "../Api/Api";
 import Brand from "./Brand";
 const GirdWrapper = styled.div`
   width: 100vw;
@@ -10,22 +11,34 @@ const GirdWrapper = styled.div`
   grid-row-gap: 1em;
   grid-column-gap: 1em;
   justify-items: center;
+  @media only screen and (max-width: 873px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fill, auto-fill);
+    grid-row-gap: 1em;
+    grid-column-gap: 0.5em;
+    justify-items: center;
+  }
+  @media only screen and (max-width: 400px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fill, auto-fill);
+    grid-row-gap: 1em;
+    grid-column-gap: 0.5em;
+    justify-items: center;
+  }
 `;
 
-function BrandGrid() {
+interface IBrandGrid {
+  data: IBrands[] | undefined;
+  isLoading: boolean;
+}
+function BrandGrid({ data, isLoading }: IBrandGrid) {
   return (
     <GirdWrapper>
-      <Brand></Brand>
-      <Brand></Brand>
-      <Brand></Brand>
-      <Brand></Brand>
-      <Brand></Brand>
-      <Brand></Brand>
-      <Brand></Brand>
-      <Brand></Brand>
-      <Brand></Brand>
-      <Brand></Brand>
-      <Brand></Brand>
+      {data?.map((brand) => (
+        <Brand data={brand} />
+      ))}
     </GirdWrapper>
   );
 }

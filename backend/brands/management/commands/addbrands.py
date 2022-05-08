@@ -13,7 +13,8 @@ class Command(BaseCommand):
         parser.add_argument("--list", help="Print Gi list", action="store_true")
 
     def get_image_path(self, brand):
-        images_dir = os.path.join(settings.MEDIA_ROOT, "brand_photos")
+        # images_dir = os.path.join(settings.MEDIA_URL, "brand_photos")
+        images_dir = "brand_photos"
         image_file_name = brand + ".png"
         return os.path.join(images_dir, image_file_name)
 

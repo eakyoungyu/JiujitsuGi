@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 
 import App from "./App";
@@ -7,6 +8,7 @@ import { theme } from "./theme";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -58,8 +60,8 @@ table {
   box-sizing: border-box;
 }
 body {
-  font-weight: 300;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-family: 'Nanum Gothic', sans-serif;
   color:${(props) => props.theme.textColor};
   line-height: 1.2;
   
@@ -69,12 +71,15 @@ a {
   color:inherit;
 }
 `;
+const client = new QueryClient();
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <App />
-    </ThemeProvider>
+    <QueryClientProvider client={client}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <App />
+      </ThemeProvider>
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

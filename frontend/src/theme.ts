@@ -12,7 +12,10 @@ export const theme: DefaultTheme = {
     grey: "#f5f5f7",
     white: "#fafafa",
   },
-  grey: "#86858a",
+  grey: {
+    darker: "#424244",
+    lighter: "#86858a",
+  },
   black: {
     darker: "#141414",
     lighter: "#2F2F2F",

@@ -25,6 +25,7 @@ def main():
             os.system("npm run build")
             os.chdir(project_root)
             sys.argv.pop(2)
+            print("Y2K2 Frontend done")
     except IndexError:
         execute_from_command_line(sys.argv)
     else:
