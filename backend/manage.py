@@ -31,7 +31,6 @@ def main():
     else:
         execute_from_command_line(sys.argv)
     finally:
-        print("Y2K2 change directory", backend_dir)
         os.chdir(backend_dir)
 
 

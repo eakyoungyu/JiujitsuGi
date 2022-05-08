@@ -10,8 +10,10 @@ black = "*"
 pillow = "*"
 django-cors-headers = "*"
 djangorestframework = "*"
-
-[dev-packages]
+django-environ = "*"
+django-storages = {extras = ["aws"], version = "*"}
+boto3 = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"

@@ -10,24 +10,42 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from email.policy import default
 from pathlib import Path
 import os
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 FRONTEND_DIR = os.path.join(Path(__file__).resolve().parent.parent.parent, "frontend")
 
+# Set environ
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+
+# reading .env file
+environ.Env.read_env(env_file=os.path.join(BASE_DIR, ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-^p#9t@@(mn$v0*hjdj+4kum$n^exsks=)3bfh#8f+n=nu@v%ag"
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = env.bool("DEBUG", default=True)
+DEBUG = env("DEBUG_VAL")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "127.0.0.1:3000",
+    "127.0.0.1:8000",
+    "127.0.0.1:7000",
+    "127.0.0.1:5000",
+]
 
 
 # Application definition
@@ -48,6 +66,7 @@ PROJECT_APPS = [
     "gis.apps.GisConfig",
     "rest_framework",
     "corsheaders",
+    "storages",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
@@ -153,3 +172,31 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
 MEDIA_URL = "/media/"
 
 CORS_ORIGIN_WHITELIST = ("http://localhost:3000",)
+
+# AWS S3 setting
+DEFAULT_FILE_STORAGE = "config.storages.MediaStorage"
+STATICFILES_STORAGE = "config.storages.StaticStorage"
+MEDIAFILES_LOCATION = "media"
+STATICFILES_LOCATION = "static"
+AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = "great-ddobok"
+
+# TODO: DATABASE
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "level": "ERROR",
+            "class": "logging.StreamHandler",
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "level": "ERROR",
+        }
+    },
+}
