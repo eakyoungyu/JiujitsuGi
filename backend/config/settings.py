@@ -159,7 +159,6 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     # os.path.join(BASE_DIR, "static"),
     os.path.join(FRONTEND_DIR, "build", "static"),
-
 ]
 
 # Default primary key field type
@@ -181,6 +180,7 @@ STATICFILES_LOCATION = "static"
 AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
 AWS_STORAGE_BUCKET_NAME = "great-ddobok"
+AWS_S3_SIGNATURE_VERSION = "s3v4"
 
 # TODO: DATABASE
 
