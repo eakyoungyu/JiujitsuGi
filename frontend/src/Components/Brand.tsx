@@ -67,7 +67,7 @@ const InfoTitle = styled.h1`
 `;
 const InfoDetail = styled.div`
   font-size: 12px;
-  width: 80%;
+  /* width: 80%; */
   text-align: center;
   @media only screen and (min-width: 1500px) {
     font-size: 14px;
@@ -97,9 +97,7 @@ function Brand({ data }: IBrand) {
     <Wrapper>
       <InfoBox>
         <InfoThumnailBox>
-          <InfoThumnail
-            src={`http://127.0.0.1:8000${data?.first_photo}`}
-          ></InfoThumnail>
+          <InfoThumnail src={`${data?.first_photo}`}></InfoThumnail>
         </InfoThumnailBox>
         <InfoTitle>{data?.name}</InfoTitle>
         <InfoDetail>{data?.description}</InfoDetail>
