@@ -170,7 +170,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
 
 MEDIA_URL = "/media/"
 
-CORS_ORIGIN_WHITELIST = ("http://localhost:3000",)
+# To solve CORS error in frontend
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = [
+    #    'http://127.0.0.1:8000',
+       'http://127.0.0.1:3000',
+]
+# CORS_ORIGIN_WHITELIST = ("http://localhost:3000",)
 
 # AWS S3 setting
 DEFAULT_FILE_STORAGE = "config.storages.MediaStorage"
