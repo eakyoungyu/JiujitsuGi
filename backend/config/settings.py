@@ -177,14 +177,24 @@ DEFAULT_FILE_STORAGE = "config.storages.MediaStorage"
 STATICFILES_STORAGE = "config.storages.StaticStorage"
 MEDIAFILES_LOCATION = "media"
 STATICFILES_LOCATION = "static"
+
 AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = "great-ddobok"
+AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
 AWS_S3_SIGNATURE_VERSION = "s3v4"
 AWS_S3_REGION_NAME = "ap-northeast-2"
 AWS_S3_HOST = "s3.ap-northeast-2.amazonaws.com"
 
-# TODO: DATABASE
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env("DB_NAME"),
+        "HOST": env("DB_HOST"),
+        "PORT": env("DB_PORT"),
+        "USER": env("DB_USER"),
+        "PASSWORD": env("DB_PASSWORD"),
+    }
+}
 
 LOGGING = {
     "version": 1,
