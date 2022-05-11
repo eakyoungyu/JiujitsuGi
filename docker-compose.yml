@@ -2,6 +2,7 @@ version: "3"
 
 services:
   backend:
+    image: seokyoungyu/jiujitsu-gi_backend
     build:
       context: ./backend
       shm_size: "3gb"
@@ -9,12 +10,13 @@ services:
     ports:
       - "8000:8000"
   frontend:
+    image: seokyoungyu/jiujitsu-gi_frontend
     build:
       context: ./frontend
     volumes:
       - react_build:/frontend/build
   nginx:
-    image: nginx:latest
+    image: seokyoungyu/nginx
     ports:
       - 80:8080
     volumes:
