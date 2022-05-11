@@ -40,7 +40,7 @@ class Command(BaseCommand):
             print("Add brand: ", name)
 
     def add_line_to_db(self, line: tuple):
-        name, link, description = line
+        name, link, description, is_domestic, instagram = line
         photo = self.get_image_path(name)
         self.add_brand(name, link, description)
         self.add_photo(brand=name, photo=photo)
