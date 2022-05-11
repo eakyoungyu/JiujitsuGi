@@ -14,6 +14,7 @@ django-environ = "*"
 django-storages = {extras = ["aws"], version = "*"}
 boto3 = "*"
 gunicorn = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.8"
