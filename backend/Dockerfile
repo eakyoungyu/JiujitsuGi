@@ -6,14 +6,8 @@ RUN python3 -m pip install --upgrade pip
 RUN apk update && apk add python3-dev gcc libc-dev
 RUN pip install -r requirements.txt
 COPY . .
-
-
-
-
-
-
-
-
+CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000", "--access-logfile", "-"]
+# CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
 
 
 
