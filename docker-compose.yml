@@ -17,7 +17,8 @@ services:
     volumes:
       - react_build:/frontend/build
   nginx:
-    image: seokyoungyu/nginx
+    # image: seokyoungyu/nginx
+    image: nginx:latest
     ports:
       - 80:8080
     volumes:

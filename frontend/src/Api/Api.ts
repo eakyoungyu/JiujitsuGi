@@ -6,8 +6,8 @@ export interface IBrands {
 }
 
 export function GetBrandsApi() {
-  const apiUrl = "http://127.0.0.1:8000/brand/api/";
-  // const apiUrl = "http://127.0.0.1/brand/api/";
+  // const apiUrl = "http://127.0.0.1:8000/brand/api/";
+  const apiUrl = "http://127.0.0.1:80/brand/api/";
   // return fetch(apiUrl)
   //   .then((res) => {
   //     if (res.ok) {
