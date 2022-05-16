@@ -174,7 +174,7 @@ MEDIA_URL = "/media/"
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = [
     #    'http://127.0.0.1:8000',
-       'http://127.0.0.1:3000',
+    "http://127.0.0.1:3000",
 ]
 # CORS_ORIGIN_WHITELIST = ("http://localhost:3000",)
 
@@ -190,6 +190,10 @@ AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
 AWS_S3_SIGNATURE_VERSION = "s3v4"
 AWS_S3_REGION_NAME = "ap-northeast-2"
 AWS_S3_HOST = "s3.ap-northeast-2.amazonaws.com"
+AWS_S3_CUSTOM_DOMAIN = (
+    f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com"
+)
+STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/"
 
 DATABASES = {
     "default": {
