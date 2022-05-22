@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const FooterWrapper = styled.div`
   background-color: ${(props) => props.theme.backgroundColor.grey};
-  padding-top: 20px;
+  padding: 20px 0px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@ const FooterWrapper = styled.div`
 function Footer() {
   return (
     <FooterWrapper>
-      <span>Contact us: great.ddobok@gmail.com</span>
+      <span>Contact us 📧 great.ddobok@gmail.com</span>
       <footer>Copyright &copy; 2022 DDobok</footer>
     </FooterWrapper>
   );

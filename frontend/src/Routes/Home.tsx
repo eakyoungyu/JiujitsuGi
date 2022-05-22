@@ -40,7 +40,7 @@ function Home() {
     ["brands", "brandHome"],
     GetBrandsApi
   );
-  console.log(brands);
+  // console.log(brands);
   return (
     <Background>
       <MsgBox>

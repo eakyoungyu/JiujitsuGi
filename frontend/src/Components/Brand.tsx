@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { IBrands } from "../Api/Api";
+import { motion } from "framer-motion";
 import { theme } from "../theme";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
@@ -73,7 +74,7 @@ const InfoDetail = styled.div`
     font-size: 14px;
   }
 `;
-const LinkBox = styled.div`
+const LinkBox = styled(motion.div)`
   margin-top: 20px;
   padding: 10px 15px;
   border-radius: 20px;
@@ -88,6 +89,16 @@ const LinkBox = styled.div`
     margin-top: 15px;
   }
 `;
+const LinkBoxVariants = {
+  initial: {},
+  hover: {
+    scale: 1.08,
+    backgroundColor: "#0071e3",
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
 interface IBrand {
   data: IBrands | undefined;
 }
@@ -102,7 +113,7 @@ function Brand({ data }: IBrand) {
         <InfoTitle>{data?.name}</InfoTitle>
         <InfoDetail>{data?.description}</InfoDetail>
       </InfoBox>
-      <LinkBox>
+      <LinkBox variants={LinkBoxVariants} initial="initial" whileHover="hover">
         <a href={data?.link} target="_blank">
           <span>구매하러 가기</span>
         </a>

@@ -73,7 +73,9 @@ function Nav() {
   return (
     <>
       <NavBar>
-        <Title>DDobok</Title>
+        <Link to={"/"}>
+          <Title>DDobok</Title>
+        </Link>
         <Item>
           <Link to={"/"}>
             {/* <FontAwesomeIcon icon={faApple} size="lg" /> */}
@@ -82,15 +84,15 @@ function Nav() {
           </Link>
         </Item>
         <Item>
-          <Link to={"/nav1"}>
+          <Link to={"/newgi"}>
             새도복 {nav1Match?.isExact && <Circle layoutId="circle" />}
           </Link>
         </Item>
-        <Item>
+        {/* <Item>
           <Link to={"/nav2"}>
             내정보 {nav2Match?.isExact && <Circle layoutId="circle" />}
           </Link>
-        </Item>
+        </Item> */}
       </NavBar>
     </>
   );

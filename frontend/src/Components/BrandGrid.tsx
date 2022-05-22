@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { IBrands } from "../Api/Api";
 import Brand from "./Brand";
 const GirdWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   padding: 20px;
   background-color: ${(props) => props.theme.backgroundColor.grey};
   display: grid;
