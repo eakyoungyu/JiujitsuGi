@@ -2,6 +2,7 @@
 Show Jiu-jitsu gi websites in Korea
 + website: http://43.200.15.2/
 
+
 ## Frontend
 
 ![image](https://user-images.githubusercontent.com/79842380/197388666-b0b23c23-7868-47e1-bfc7-5474de492016.png)
@@ -9,9 +10,13 @@ Show Jiu-jitsu gi websites in Korea
 ### Library & Framework
 - React
 - Styled-Component
-- Web server: nginx
+
+### Features
+- Responsive website
+
 
 ## Backend
+- Web server: nginx
 - Django
 - REST API
 
